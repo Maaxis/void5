@@ -574,7 +574,7 @@ width:95%;
 
 td.quotebody
 {
-background-color:#00000099;
+background-color:#00000044;
 border-color:#73083b;
 border-width:0px 1px 1px 1px;
 border-style:solid;
@@ -848,7 +848,7 @@ border-style:inset;
 border-radius:0px;
 }
 
-img.posted /* fix for JS overwriting max-width causing small images */
+img.posted
 {
 max-width:100% !important;
 }
