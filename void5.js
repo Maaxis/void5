@@ -1,12 +1,9 @@
-let skin = document.querySelector('link').href;
-if (skin.includes("skin11") {
-    var high_performance = true;
-}
+let skin = document.querySelector('link').href; // referenced in future functions that are skin-specific
 
-if (!(high_performance)) { // do not run any code in High Performance
+// switch the skin based on the time of day
+if (!(skin.includes("skin11"))) { // do not run any code in High Performance
     let today = new Date();
     let hour = today.getHours();
-    var time_of_day = "";
     if (skin.includes("skin9") && hour < 21 && hour > 5) { // if skin is set to time switcher AND hour is between 6am and 9pm
         change_to_day(); // use day skin
     }
@@ -18,16 +15,24 @@ if (!(high_performance)) { // do not run any code in High Performance
         let link = document.querySelector('link');
         link.setAttribute("href", "/Forums/void5/skin7.css") // actually changes the skin
         skin = "skin7"; // change this variable from skin9 (time-switcher) to skin7 (day). does not change the visible skin for the user, but allows the skin variable to be reusable for later references to day-only functions
-        var time_of_day = "Day";
     }
 
     function change_to_night() {
         let link = document.querySelector('link');
         link.setAttribute("href", "/Forums/void5/skin8.css") // actually changes the skin
         skin = "skin8"; // change this variable from skin9 (time-switcher) to skin8 (night). does not change the visible skin for the user, but allows the skin variable to be reusable for later references to night-only functions
-        var time_of_day = "Night";
     }
+} // closes if statement for High Performance check
 
+if (!(skin.includes("skin11"))) { // do not run any code in High Performance
+    // create petals in day skin
+    var time_of_day = "";
+    if (skin.includes("skin7")) {
+        time_of_day = "Day";
+    }
+    else if (skin.includes("skin8")) {
+        time_of_day = "Night";
+    }
     function time_based_animations() {
         if (time_of_day == "Day") { // only run on day skin
             var petalImages = [
@@ -181,6 +186,7 @@ if (!(high_performance)) { // do not run any code in High Performance
                 } else if ((imgs[i].src == shop_dialogue_blank)) {
                     shop_dialogue(imgs[i]);
                 }
+                //imgs[i].style.maxWidth = "100%";
             }
         }
     }
@@ -212,6 +218,26 @@ if (!(high_performance)) { // do not run any code in High Performance
         "https://i.imgur.com/ueb36LD.png": "https://i.imgur.com/LhzL1jS.png", // Victoria
         "https://i.imgur.com/VJR5wY3.png": "https://i.imgur.com/wSWcq16.png", // Winter
         "https://i.imgur.com/skTM6bm.png": "https://i.imgur.com/uRYIi6H.png", // Zelda
+
+
+
+        "https://i.imgur.com/BZSFbAZ.png": "https://i.imgur.com/7USVIi1.png", //Blaire boot
+        "https://i.imgur.com/IfEuOdB.png": "https://i.imgur.com/lv8dJXq.png", //Neil boot
+        "https://i.imgur.com/39WrwSF.png": "https://i.imgur.com/XDYzZb5.png", //Austen boot
+        "https://i.imgur.com/VrdYbJQ.png": "https://i.imgur.com/ysb5uTx.png", //Tanner boot
+        "https://i.imgur.com/aTDNKK2.png": "https://i.imgur.com/LEjNpUD.png", // Emerson boot
+        "https://i.imgur.com/CpkoW3Z.png": "https://i.imgur.com/PpFTzf1.png", // Katara boot
+        "https://i.imgur.com/yDf2hRK.png": "https://i.imgur.com/QRtaVvt.png", // Persephone boot
+        "https://i.imgur.com/19jg2cV.png": "https://i.imgur.com/16xjStT.png", // Victoria boot
+        "https://i.imgur.com/3BZM0Kh.png": "https://i.imgur.com/CLaDN6p.png", // Franklin juror
+        "https://i.imgur.com/OamRAza.png": "https://i.imgur.com/oRek75M.png", // Riley juror
+        "https://i.imgur.com/1x9npQD.png": "https://i.imgur.com/zQy6hJG.png", // Otis juror
+        "https://i.imgur.com/ZPKDsO8.png": "https://i.imgur.com/bkeyGwM.png", // Chloe juror
+        "https://i.imgur.com/n0hdzdq.png": "https://i.imgur.com/ZI1jAvU.png", // Justine juror
+        "https://i.imgur.com/uVUoxh7.png": "https://i.imgur.com/QKaE3MZ.png", // Landon juror
+        "https://i.imgur.com/1NSeiBZ.png": "https://i.imgur.com/KnpZb9J.png", // Zelda juror
+
+
         // post marker
         "https://i.imgur.com/RXqTI54.png": "https://i.imgur.com/DXzDPxt.png",
         // AVATARS
@@ -246,8 +272,25 @@ if (!(high_performance)) { // do not run any code in High Performance
         "https://i.imgur.com/Ihj2CRj.png": "https://i.imgur.com/AvvKfeN.png", //Viola avatar
         "https://i.imgur.com/8cfkBiz.png": "https://i.imgur.com/ArF03th.png", //Luca avatar
         "https://i.imgur.com/MIFQhxD.png": "https://i.imgur.com/qI13nQM.png", //Juno avatar
+        "https://i.imgur.com/QEQB4ib.png": "https://i.imgur.com/WIDJAcY.png", //Takeshi avatar
         //CHALLENGE BANNERS
         "https://i.imgur.com/1T5e3Hu.png": "https://i.imgur.com/vtOTpvT.png", //Intro to Floriculture
+        "https://i.imgur.com/yx28z2J.png": "https://i.imgur.com/fXYqhls.png", //Puzzling Times
+        "https://i.imgur.com/iU8XZ6s.png": "https://i.imgur.com/OhsTs86.png", //An Abstruse Almanac
+        "https://i.imgur.com/RZpqBYw.png": "https://i.imgur.com/UwLv2pY.png", //Pushing the Pace
+        "https://i.imgur.com/mxgHG8d.png": "https://i.imgur.com/SwwHLuG.png", //Classifying Confusion
+        "https://i.imgur.com/iRMjiFV.png": "https://i.imgur.com/3ZHqNjC.png", //Scaling the Spectrum
+        "https://i.imgur.com/DeVp899.png": "https://i.imgur.com/0NANflt.png", //Count Your Saplings
+        "https://i.imgur.com/i36EjHR.png": "https://i.imgur.com/hSdD4RR.png", //Prudent Prowl
+        "https://i.imgur.com/gDtZgwQ.png": "https://i.imgur.com/udM6lPE.png", //Auction
+        "https://i.imgur.com/VrndJTd.png": "https://i.imgur.com/s01ov2S.png", //Role Models
+        "https://i.imgur.com/2HPhWvp.png": "https://i.imgur.com/aQCjAXW.png", //Cracking the Code
+        "https://i.imgur.com/nJ2PO6w.png": "https://i.imgur.com/lnDS6Zv.png", //Logical Next Steps
+        "https://i.imgur.com/t9SfOge.png": "https://i.imgur.com/PNytl84.png", //Time Travel Trellis
+        "https://i.imgur.com/LezvSWT.png": "https://i.imgur.com/twLc3wa.png", //The Harvest
+
+        "https://i.imgur.com/t4KKsXV.png": "https://i.imgur.com/PhifcoH.png", //Shop NPC
+        "https://i.imgur.com/A2T14iX.png": "https://i.imgur.com/pd9iM1h.png" //Shop Menu
     };
 
     window.onload = function start() {
